@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/michen/dev/mouse_presets/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

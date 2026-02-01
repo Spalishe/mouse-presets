@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/layer-shell.c.o -c /home/michen/dev/mouse_presets/src/layer-shell.c",
+  "file": "/home/michen/dev/mouse_presets/src/layer-shell.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o"
+},
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/main.c.o -c /home/michen/dev/mouse_presets/src/main.c",
+  "file": "/home/michen/dev/mouse_presets/src/main.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/main.c.o"
+},
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/render.c.o -c /home/michen/dev/mouse_presets/src/render.c",
+  "file": "/home/michen/dev/mouse_presets/src/render.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/render.c.o"
+},
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/wayland.c.o -c /home/michen/dev/mouse_presets/src/wayland.c",
+  "file": "/home/michen/dev/mouse_presets/src/wayland.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/wayland.c.o"
+},
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o -c /home/michen/dev/mouse_presets/src/xdg-shell.c",
+  "file": "/home/michen/dev/mouse_presets/src/xdg-shell.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o"
+}
+]

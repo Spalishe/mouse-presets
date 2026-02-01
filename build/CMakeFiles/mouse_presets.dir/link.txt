@@ -1,0 +1,1 @@
+/usr/bin/cc -lm -lwayland-client -lcairo -O3 -march=native -g -Wl,--dependency-file=CMakeFiles/mouse_presets.dir/link.d "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o" CMakeFiles/mouse_presets.dir/src/main.c.o CMakeFiles/mouse_presets.dir/src/render.c.o CMakeFiles/mouse_presets.dir/src/wayland.c.o "CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o" -o mouse_presets
