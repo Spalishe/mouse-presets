@@ -1,7 +1,6 @@
 CMakeFiles/mouse_presets.dir/src/main.c.o: \
  /home/michen/dev/mouse_presets/src/main.c /usr/include/stdc-predef.h \
  /home/michen/dev/mouse_presets/src/main.h \
- /home/michen/dev/mouse_presets/src/render.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -12,6 +11,7 @@ CMakeFiles/mouse_presets.dir/src/main.c.o: \
  /usr/include/bits/time64.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
+ /home/michen/dev/mouse_presets/src/render.h \
  /home/michen/dev/mouse_presets/src/wayland.h \
  /usr/include/wayland-client.h /usr/include/wayland-client-core.h \
  /usr/include/wayland-util.h /usr/include/math.h \

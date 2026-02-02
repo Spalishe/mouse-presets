@@ -21,7 +21,11 @@ void *keys(void *arg) {
       }
       if (ev.value == 1) {
         if (ev.code == profile_switch_button) {
-          update_text("test");
+          profile_ind++;
+          if (profile_ind > profile_max_ind)
+            profile_ind = 0;
+          struct profile new = presets[profile_ind];
+          update_text(new.name, new.color);
         }
       }
     }

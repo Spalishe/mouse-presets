@@ -69,6 +69,7 @@ CMakeFiles/mouse_presets.dir/src/layer-shell.c.o
 
 CMakeFiles/mouse_presets.dir/src/main.c.o
  /home/michen/dev/mouse_presets/src/main.c
+ /home/michen/dev/mouse_presets/src/main.h
  /home/michen/dev/mouse_presets/src/render.h
  /home/michen/dev/mouse_presets/src/wayland.h
  /usr/include/asm-generic/bitsperlong.h

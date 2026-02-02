@@ -124,15 +124,8 @@ static bool create_shm_buffer(int w, int h) {
 }
 
 /* draw test text into cairo_surface */
-static void draw_test_text(const char *text, uint32_t x, uint32_t y, float r,
-                           float g, float b, float a) {
-  if (!cairo_surface)
-    return;
-  cairo_t *cr = cairo_create(cairo_surface);
-  cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
-  /* clear transparent */
-  cairo_set_source_rgba(cr, 0, 0, 0, 0);
-  cairo_paint(cr);
+static void draw_test_text(cairo_t *cr, const char *text, uint32_t x,
+                           uint32_t y, float r, float g, float b, float a) {
 
   /* draw white text near top center */
   cairo_select_font_face(cr, "Sans", CAIRO_FONT_SLANT_NORMAL,
@@ -147,8 +140,6 @@ static void draw_test_text(const char *text, uint32_t x, uint32_t y, float r,
   cairo_set_source_rgba(cr, r, g, b, a);
   cairo_move_to(cr, x - ext.x_bearing, y);
   cairo_show_text(cr, text);
-
-  cairo_destroy(cr);
 }
 
 /* layer-surface configure listener */
@@ -174,7 +165,7 @@ layer_surface_handle_configure(void *data,
 
   zwlr_layer_surface_v1_ack_configure(surface_v1, serial);
 
-  draw_test_text("Selected profile:", 0, get_y_pos() * 35 - 5, 1, 1, 1, 0.3);
+  // draw_test_text("Selected profile:", 0, get_y_pos() * 35 - 5, 1, 1, 1, 0.3);
 
   /* attach buffer and commit */
   wl_surface_attach(surface, wl_buffer, 0, 0);
@@ -232,7 +223,25 @@ static const struct wl_registry_listener registry_listener = {
 static struct wl_callback *frame_cb;
 
 void draw_text() {
-  draw_test_text("Selected profile:", 30, get_y_pos() * 35 - 5, 1, 1, 1, 0.3);
+  if (!cairo_surface)
+    return;
+  cairo_t *cr = cairo_create(cairo_surface);
+  cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+  /* clear transparent */
+  cairo_set_source_rgba(cr, 0, 0, 0, 0);
+  cairo_paint(cr);
+
+  draw_test_text(cr, "Selected profile:", 30, get_y_pos() * 35 - 5, 1, 1, 1,
+                 0.7);
+
+  uint32_t color = get_color();
+  float r = ((color & 0xFF000000) >> 24) / 255.0f;
+  float g = ((color & 0xFF0000) >> 16) / 255.0f;
+  float b = ((color & 0xFF00) >> 8) / 255.0f;
+  float a = (color & 0xFF) / 255.0f;
+  draw_test_text(cr, get_text(), 225, get_y_pos() * 35 - 5, r, g, b, a);
+
+  cairo_destroy(cr);
 }
 
 struct wl_callback_listener frame_listener = {.done = frame_done};
@@ -280,7 +289,7 @@ int wayland_backend() {
 
   /* create layer-surface: layer = TOP, namespace string arbitrary */
   layer_surface = zwlr_layer_shell_v1_get_layer_surface(
-      layer_shell, surface, output, ZWLR_LAYER_SHELL_V1_LAYER_TOP,
+      layer_shell, surface, output, ZWLR_LAYER_SHELL_V1_LAYER_OVERLAY,
       "example-layer");
 
   /* set anchors: top + left + right to stretch across top */

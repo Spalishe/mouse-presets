@@ -67,6 +67,7 @@ CMakeFiles/mouse_presets.dir/src/layer-shell.c.o: /home/michen/dev/mouse_presets
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h
 
 CMakeFiles/mouse_presets.dir/src/main.c.o: /home/michen/dev/mouse_presets/src/main.c \
+  /home/michen/dev/mouse_presets/src/main.h \
   /home/michen/dev/mouse_presets/src/render.h \
   /home/michen/dev/mouse_presets/src/wayland.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -531,8 +532,6 @@ CMakeFiles/mouse_presets.dir/src/wayland.c.o:
 
 /usr/lib/libfontconfig.so.1:
 
-/usr/lib/libc.so.6:
-
 /usr/lib/libbz2.so.1.0:
 
 /usr/lib/libXrender.so.1:
@@ -613,6 +612,10 @@ CMakeFiles/mouse_presets.dir/src/render.c.o:
 
 /usr/include/sched.h:
 
+/usr/include/wayland-version.h:
+
+/usr/include/linux/stddef.h:
+
 /usr/include/sys/select.h:
 
 /usr/include/bits/environments.h:
@@ -685,6 +688,10 @@ CMakeFiles/mouse_presets.dir/src/render.c.o:
 
 /usr/include/fcntl.h:
 
+/usr/lib/libc.so.6:
+
+/home/michen/dev/mouse_presets/src/main.h:
+
 /usr/include/bits/floatn.h:
 
 /usr/include/stdlib.h:
@@ -730,10 +737,6 @@ CMakeFiles/mouse_presets.dir/src/render.c.o:
 /usr/include/bits/struct_rwlock.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/wayland-version.h:
-
-/usr/include/linux/stddef.h:
 
 /home/michen/dev/mouse_presets/src/layer-shell.c:
 

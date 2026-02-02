@@ -5,6 +5,7 @@
 
 uint64_t last_timestamp = 0;
 char *text = "";
+uint32_t color = 0xFFFFFFFF;
 
 uint64_t now_ms(void) {
   struct timespec ts;
@@ -26,7 +27,10 @@ float get_y_pos() {
 
   return val;
 }
-void update_text(char *new_text) {
+char *get_text() { return text; }
+uint32_t get_color() { return color; }
+void update_text(char *new_text, uint32_t col) {
   text = new_text;
+  color = col;
   last_timestamp = now_ms();
 }
