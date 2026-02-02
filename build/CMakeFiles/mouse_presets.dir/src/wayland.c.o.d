@@ -64,4 +64,5 @@ CMakeFiles/mouse_presets.dir/src/wayland.c.o: \
  /usr/include/wayland-client.h /usr/include/cairo/cairo.h \
  /usr/include/cairo/cairo-version.h /usr/include/cairo/cairo-features.h \
  /usr/include/cairo/cairo-deprecated.h /usr/include/wayland-client-core.h \
+ /home/michen/dev/mouse_presets/src/defs.h \
  /home/michen/dev/mouse_presets/src/layer-shell.h

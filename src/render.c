@@ -1,17 +1,21 @@
 #include "render.h"
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <time.h>
-
-uint64_t last_timestamp = 0;
-char *text = "";
-uint32_t color = 0xFFFFFFFF;
 
 uint64_t now_ms(void) {
   struct timespec ts;
   clock_gettime(CLOCK_MONOTONIC, &ts);
   return (uint64_t)ts.tv_sec * 1000 + (uint64_t)ts.tv_nsec / 1000000;
 }
+
+uint64_t last_timestamp = 0;
+char *text = "";
+uint32_t color = 0xFFFFFFFF;
+
+uint64_t last_timestamp_x = 0;
+bool x_active = false;
 
 float get_y_pos() {
   uint64_t t = now_ms();
@@ -27,10 +31,34 @@ float get_y_pos() {
 
   return val;
 }
+
+float get_x_pos() {
+  uint64_t t = now_ms();
+  float diff = (t - last_timestamp_x) / 1000.0f;
+  float val = 0;
+
+  if (x_active) {
+    val = 1.0 - pow(2.0, -10.0 * diff);
+  } else {
+    val = 1.0 - pow(2.0 * diff, 10.0);
+  }
+
+  return val;
+}
+
 char *get_text() { return text; }
 uint32_t get_color() { return color; }
 void update_text(char *new_text, uint32_t col) {
   text = new_text;
   color = col;
-  last_timestamp = now_ms();
+  float diff = (now_ms() - last_timestamp) / 1000.0f;
+  if (diff > 6.0)
+    last_timestamp = now_ms();
+  else if (diff >= 1.0 && diff < 5.0)
+    last_timestamp = now_ms() - 1000;
+}
+void update_x(bool active) {
+  if (x_active != active)
+    last_timestamp_x = now_ms();
+  x_active = active;
 }

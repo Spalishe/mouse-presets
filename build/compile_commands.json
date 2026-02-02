@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/michen/dev/mouse_presets/build",
+  "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/defs.c.o -c /home/michen/dev/mouse_presets/src/defs.c",
+  "file": "/home/michen/dev/mouse_presets/src/defs.c",
+  "output": "CMakeFiles/mouse_presets.dir/src/defs.c.o"
+},
+{
+  "directory": "/home/michen/dev/mouse_presets/build",
   "command": "/usr/bin/cc   -lm -lwayland-client -lcairo -O3 -march=native -g -std=gnu17 -o CMakeFiles/mouse_presets.dir/src/layer-shell.c.o -c /home/michen/dev/mouse_presets/src/layer-shell.c",
   "file": "/home/michen/dev/mouse_presets/src/layer-shell.c",
   "output": "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o"

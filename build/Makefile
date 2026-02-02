@@ -129,6 +129,30 @@ mouse_presets/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mouse_presets.dir/build.make CMakeFiles/mouse_presets.dir/build
 .PHONY : mouse_presets/fast
 
+src/defs.o: src/defs.c.o
+.PHONY : src/defs.o
+
+# target to build an object file
+src/defs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mouse_presets.dir/build.make CMakeFiles/mouse_presets.dir/src/defs.c.o
+.PHONY : src/defs.c.o
+
+src/defs.i: src/defs.c.i
+.PHONY : src/defs.i
+
+# target to preprocess a source file
+src/defs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mouse_presets.dir/build.make CMakeFiles/mouse_presets.dir/src/defs.c.i
+.PHONY : src/defs.c.i
+
+src/defs.s: src/defs.c.s
+.PHONY : src/defs.s
+
+# target to generate assembly for a file
+src/defs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mouse_presets.dir/build.make CMakeFiles/mouse_presets.dir/src/defs.c.s
+.PHONY : src/defs.c.s
+
 src/layer-shell.o: src/layer-shell.c.o
 .PHONY : src/layer-shell.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mouse_presets"
+	@echo "... src/defs.o"
+	@echo "... src/defs.i"
+	@echo "... src/defs.s"
 	@echo "... src/layer-shell.o"
 	@echo "... src/layer-shell.i"
 	@echo "... src/layer-shell.s"

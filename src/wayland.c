@@ -16,9 +16,9 @@
 #include <wayland-client-core.h>
 #include <wayland-client.h>
 /* generated protocol header for wlr-layer-shell (see notes below) */
+#include "defs.h"
 #include "layer-shell.h"
 #include "render.h"
-
 /* Global Wayland objects (kept simple for example) */
 static struct wl_display *display = NULL;
 static struct wl_registry *registry = NULL;
@@ -124,8 +124,9 @@ static bool create_shm_buffer(int w, int h) {
 }
 
 /* draw test text into cairo_surface */
-static void draw_test_text(cairo_t *cr, const char *text, uint32_t x,
-                           uint32_t y, float r, float g, float b, float a) {
+static struct text_size draw_test_text(cairo_t *cr, const char *text,
+                                       uint32_t x, uint32_t y, float r, float g,
+                                       float b, float a) {
 
   /* draw white text near top center */
   cairo_select_font_face(cr, "Sans", CAIRO_FONT_SLANT_NORMAL,
@@ -140,6 +141,10 @@ static void draw_test_text(cairo_t *cr, const char *text, uint32_t x,
   cairo_set_source_rgba(cr, r, g, b, a);
   cairo_move_to(cr, x - ext.x_bearing, y);
   cairo_show_text(cr, text);
+
+  struct text_size t = {ext.width, ext.height};
+
+  return t;
 }
 
 /* layer-surface configure listener */
@@ -240,6 +245,25 @@ void draw_text() {
   float b = ((color & 0xFF00) >> 8) / 255.0f;
   float a = (color & 0xFF) / 255.0f;
   draw_test_text(cr, get_text(), 225, get_y_pos() * 35 - 5, r, g, b, a);
+
+  // Help menu
+  double l =
+      draw_test_text(cr, get_text(), get_x_pos() * 35 - 5, 60, r, g, b, a)
+          .width;
+  double h =
+      draw_test_text(cr, "binds:", get_x_pos() * 35 + 7 + l, 60, 1, 1, 1, 0.7)
+          .height;
+
+  struct profile p = presets[profile_ind];
+  for (int i = 0; i < sizeof(p.binds) / sizeof(struct key_bind); i++) {
+    struct key_bind kb = p.binds[i];
+    if (kb.key == 0)
+      continue;
+    char bind[64];
+    snprintf(bind, 64, "[%i] %s", kb.key + index_render_offset, kb.desc);
+    draw_test_text(cr, bind, get_x_pos() * 35, (h + 12) * (i + 3), 1, 1, 1,
+                   0.9);
+  }
 
   cairo_destroy(cr);
 }

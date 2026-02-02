@@ -9,6 +9,7 @@ mouse_presets: \
   /usr/lib/libmvec.so.1 \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libwayland-client.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcairo.so \
+  CMakeFiles/mouse_presets.dir/src/defs.c.o \
   CMakeFiles/mouse_presets.dir/src/layer-shell.c.o \
   CMakeFiles/mouse_presets.dir/src/main.c.o \
   CMakeFiles/mouse_presets.dir/src/render.c.o \
@@ -90,6 +91,8 @@ mouse_presets: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libwayland-client.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libcairo.so:
+
+CMakeFiles/mouse_presets.dir/src/defs.c.o:
 
 CMakeFiles/mouse_presets.dir/src/layer-shell.c.o:
 

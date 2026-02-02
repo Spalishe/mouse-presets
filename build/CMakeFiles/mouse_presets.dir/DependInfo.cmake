@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/michen/dev/mouse_presets/src/defs.c" "CMakeFiles/mouse_presets.dir/src/defs.c.o" "gcc" "CMakeFiles/mouse_presets.dir/src/defs.c.o.d"
   "/home/michen/dev/mouse_presets/src/layer-shell.c" "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o" "gcc" "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o.d"
   "/home/michen/dev/mouse_presets/src/main.c" "CMakeFiles/mouse_presets.dir/src/main.c.o" "gcc" "CMakeFiles/mouse_presets.dir/src/main.c.o.d"
   "/home/michen/dev/mouse_presets/src/render.c" "CMakeFiles/mouse_presets.dir/src/render.c.o" "gcc" "CMakeFiles/mouse_presets.dir/src/render.c.o.d"

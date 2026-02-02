@@ -72,10 +72,24 @@ include CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/codegen:
 .PHONY : CMakeFiles/mouse_presets.dir/codegen
 
+CMakeFiles/mouse_presets.dir/src/defs.c.o: CMakeFiles/mouse_presets.dir/flags.make
+CMakeFiles/mouse_presets.dir/src/defs.c.o: /home/michen/dev/mouse_presets/src/defs.c
+CMakeFiles/mouse_presets.dir/src/defs.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mouse_presets.dir/src/defs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/defs.c.o -MF CMakeFiles/mouse_presets.dir/src/defs.c.o.d -o CMakeFiles/mouse_presets.dir/src/defs.c.o -c /home/michen/dev/mouse_presets/src/defs.c
+
+CMakeFiles/mouse_presets.dir/src/defs.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/mouse_presets.dir/src/defs.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/michen/dev/mouse_presets/src/defs.c > CMakeFiles/mouse_presets.dir/src/defs.c.i
+
+CMakeFiles/mouse_presets.dir/src/defs.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/mouse_presets.dir/src/defs.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/michen/dev/mouse_presets/src/defs.c -o CMakeFiles/mouse_presets.dir/src/defs.c.s
+
 CMakeFiles/mouse_presets.dir/src/layer-shell.c.o: CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/src/layer-shell.c.o: /home/michen/dev/mouse_presets/src/layer-shell.c
 CMakeFiles/mouse_presets.dir/src/layer-shell.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mouse_presets.dir/src/layer-shell.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mouse_presets.dir/src/layer-shell.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/layer-shell.c.o -MF CMakeFiles/mouse_presets.dir/src/layer-shell.c.o.d -o CMakeFiles/mouse_presets.dir/src/layer-shell.c.o -c /home/michen/dev/mouse_presets/src/layer-shell.c
 
 CMakeFiles/mouse_presets.dir/src/layer-shell.c.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/mouse_presets.dir/src/layer-shell.c.s: cmake_force
 CMakeFiles/mouse_presets.dir/src/main.c.o: CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/src/main.c.o: /home/michen/dev/mouse_presets/src/main.c
 CMakeFiles/mouse_presets.dir/src/main.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mouse_presets.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mouse_presets.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/main.c.o -MF CMakeFiles/mouse_presets.dir/src/main.c.o.d -o CMakeFiles/mouse_presets.dir/src/main.c.o -c /home/michen/dev/mouse_presets/src/main.c
 
 CMakeFiles/mouse_presets.dir/src/main.c.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/mouse_presets.dir/src/main.c.s: cmake_force
 CMakeFiles/mouse_presets.dir/src/render.c.o: CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/src/render.c.o: /home/michen/dev/mouse_presets/src/render.c
 CMakeFiles/mouse_presets.dir/src/render.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mouse_presets.dir/src/render.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mouse_presets.dir/src/render.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/render.c.o -MF CMakeFiles/mouse_presets.dir/src/render.c.o.d -o CMakeFiles/mouse_presets.dir/src/render.c.o -c /home/michen/dev/mouse_presets/src/render.c
 
 CMakeFiles/mouse_presets.dir/src/render.c.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/mouse_presets.dir/src/render.c.s: cmake_force
 CMakeFiles/mouse_presets.dir/src/wayland.c.o: CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/src/wayland.c.o: /home/michen/dev/mouse_presets/src/wayland.c
 CMakeFiles/mouse_presets.dir/src/wayland.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mouse_presets.dir/src/wayland.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mouse_presets.dir/src/wayland.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/wayland.c.o -MF CMakeFiles/mouse_presets.dir/src/wayland.c.o.d -o CMakeFiles/mouse_presets.dir/src/wayland.c.o -c /home/michen/dev/mouse_presets/src/wayland.c
 
 CMakeFiles/mouse_presets.dir/src/wayland.c.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/mouse_presets.dir/src/wayland.c.s: cmake_force
 CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o: CMakeFiles/mouse_presets.dir/flags.make
 CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o: /home/michen/dev/mouse_presets/src/xdg-shell.c
 CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o: CMakeFiles/mouse_presets.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o -MF CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o.d -o CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o -c /home/michen/dev/mouse_presets/src/xdg-shell.c
 
 CMakeFiles/mouse_presets.dir/src/xdg-shell.c.i: cmake_force
@@ -144,6 +158,7 @@ CMakeFiles/mouse_presets.dir/src/xdg-shell.c.s: cmake_force
 
 # Object files for target mouse_presets
 mouse_presets_OBJECTS = \
+"CMakeFiles/mouse_presets.dir/src/defs.c.o" \
 "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o" \
 "CMakeFiles/mouse_presets.dir/src/main.c.o" \
 "CMakeFiles/mouse_presets.dir/src/render.c.o" \
@@ -153,6 +168,7 @@ mouse_presets_OBJECTS = \
 # External object files for target mouse_presets
 mouse_presets_EXTERNAL_OBJECTS =
 
+mouse_presets: CMakeFiles/mouse_presets.dir/src/defs.c.o
 mouse_presets: CMakeFiles/mouse_presets.dir/src/layer-shell.c.o
 mouse_presets: CMakeFiles/mouse_presets.dir/src/main.c.o
 mouse_presets: CMakeFiles/mouse_presets.dir/src/render.c.o
@@ -161,7 +177,7 @@ mouse_presets: CMakeFiles/mouse_presets.dir/src/xdg-shell.c.o
 mouse_presets: CMakeFiles/mouse_presets.dir/build.make
 mouse_presets: CMakeFiles/mouse_presets.dir/compiler_depend.ts
 mouse_presets: CMakeFiles/mouse_presets.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable mouse_presets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/michen/dev/mouse_presets/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable mouse_presets"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mouse_presets.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

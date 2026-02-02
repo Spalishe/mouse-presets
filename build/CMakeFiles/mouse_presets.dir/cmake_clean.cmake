@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mouse_presets.dir/link.d"
+  "CMakeFiles/mouse_presets.dir/src/defs.c.o"
+  "CMakeFiles/mouse_presets.dir/src/defs.c.o.d"
   "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o"
   "CMakeFiles/mouse_presets.dir/src/layer-shell.c.o.d"
   "CMakeFiles/mouse_presets.dir/src/main.c.o"
