@@ -86,8 +86,10 @@ void *keys(void *arg) {
                 ev.type = b->type;
                 ev.value = 1;
                 write(get_device_by_id(b->dev_id)->fd, &ev, sizeof(ev));
-                ev.value = 0;
-                write(get_device_by_id(b->dev_id)->fd, &ev, sizeof(ev));
+                if (bind.click != Long) {
+                  ev.value = 0;
+                  write(get_device_by_id(b->dev_id)->fd, &ev, sizeof(ev));
+                }
               }
             } else if (bind.action == Help) {
               update_x(true);
@@ -106,6 +108,18 @@ void *keys(void *arg) {
         for (int i = 0; i < (sizeof(pr.binds) / sizeof(struct key_bind)); i++) {
           struct key_bind bind = pr.binds[i];
           if (bind.key == ev.code) {
+            if (bind.click == Long) {
+              for (int i = 0; i < (sizeof(bind.buttons) / sizeof(struct bind));
+                   i++) {
+                struct bind *b = &bind.buttons[i];
+                struct input_event ev1;
+                memset(&ev1, 0, sizeof(ev1));
+                ev1.code = b->code;
+                ev1.type = b->type;
+                ev1.value = ev.value;
+                write(get_device_by_id(b->dev_id)->fd, &ev1, sizeof(ev1));
+              }
+            }
             if (bind.action == Help && ev.value != 2) {
               update_x(false);
             }

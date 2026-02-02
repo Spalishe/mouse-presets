@@ -13,6 +13,11 @@ enum Action {
   SwitchProfile = 2,
 };
 
+enum ClickType {
+  Short = 0,
+  Long = 1,
+};
+
 struct bind {
   bool valid;
   uint8_t dev_id;
@@ -24,6 +29,7 @@ struct key_bind {
   uint8_t key;
   char *desc;
   enum Action action;
+  enum ClickType click;
   struct bind buttons[8];
 };
 struct profile {
