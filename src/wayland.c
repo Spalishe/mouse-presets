@@ -137,6 +137,11 @@ static struct text_size draw_test_text(cairo_t *cr, const char *text,
   cairo_text_extents_t ext;
   cairo_text_extents(cr, text, &ext);
 
+  /* black shadow */
+  cairo_set_source_rgba(cr, 0, 0, 0, 0.7);
+  cairo_move_to(cr, x + 2.0 - ext.x_bearing, y + 2.0);
+  cairo_show_text(cr, text);
+
   /* white text */
   cairo_set_source_rgba(cr, r, g, b, a);
   cairo_move_to(cr, x - ext.x_bearing, y);
@@ -236,8 +241,8 @@ void draw_text() {
   cairo_set_source_rgba(cr, 0, 0, 0, 0);
   cairo_paint(cr);
 
-  draw_test_text(cr, "Selected profile:", 30, get_y_pos() * 35 - 5, 1, 1, 1,
-                 0.7);
+  draw_test_text(cr, "Selected profile:", 30, get_y_pos() * 35 - 5, 0.7, 0.7,
+                 0.7, 1);
 
   uint32_t color = get_color();
   float r = ((color & 0xFF000000) >> 24) / 255.0f;
@@ -250,9 +255,9 @@ void draw_text() {
   double l =
       draw_test_text(cr, get_text(), get_x_pos() * 35 - 5, 60, r, g, b, a)
           .width;
-  double h =
-      draw_test_text(cr, "binds:", get_x_pos() * 35 + 7 + l, 60, 1, 1, 1, 0.7)
-          .height;
+  double h = draw_test_text(cr, "binds:", get_x_pos() * 35 + 7 + l, 60, 0.7,
+                            0.7, 0.7, 1)
+                 .height;
 
   struct profile p = presets[profile_ind];
   for (int i = 0; i < sizeof(p.binds) / sizeof(struct key_bind); i++) {
