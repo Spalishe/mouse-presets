@@ -145,7 +145,8 @@ int main(int argc, char *argv[]) {
 
   ioctl(fd, EVIOCGRAB, 1);
   int flags = fcntl(fd, F_GETFL, 0);
-  fcntl(fd, F_SETFL, flags | O_NONBLOCK);
+  // fcntl(fd, F_SETFL, flags | O_NONBLOCK);
+  fcntl(fd, F_SETFL, flags);
 
   pthread_t thread1;
   pthread_create(&thread1, NULL, keys, (void *)&fd);

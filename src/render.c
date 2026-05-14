@@ -35,6 +35,8 @@ float get_y_pos() {
 float get_x_pos() {
   uint64_t t = now_ms();
   float diff = (t - last_timestamp_x) / 1000.0f;
+  if (diff > 5.0)
+    diff = 5.0;
   float val = 0;
 
   if (x_active) {

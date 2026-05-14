@@ -127,6 +127,8 @@ static bool create_shm_buffer(int w, int h) {
 static struct text_size draw_test_text(cairo_t *cr, const char *text,
                                        uint32_t x, uint32_t y, float r, float g,
                                        float b, float a) {
+  if ((int32_t)x < -1000)
+    x = -1000;
 
   /* draw white text near top center */
   cairo_select_font_face(cr, "Sans", CAIRO_FONT_SLANT_NORMAL,
