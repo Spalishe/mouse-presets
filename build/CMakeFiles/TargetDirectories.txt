@@ -1,3 +1,0 @@
-/home/michen/dev/mouse_presets/build/CMakeFiles/mouse_presets.dir
-/home/michen/dev/mouse_presets/build/CMakeFiles/edit_cache.dir
-/home/michen/dev/mouse_presets/build/CMakeFiles/rebuild_cache.dir
