@@ -2,3 +2,9 @@
 ./build/
 ./.cache
 ./build
+build
+build/*
+.cache
+.cache/*
+./.cache/*
+./build/*
