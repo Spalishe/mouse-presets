@@ -61,6 +61,22 @@ struct device *get_device_by_id(uint8_t dev_id) {
   return NULL;
 }
 
+void send_input_event(int fd, uint16_t type, uint16_t code, int32_t value) {
+  struct input_event ev;
+  memset(&ev, 0, sizeof(ev));
+
+  ev.type = type;
+  ev.code = code;
+  ev.value = value;
+
+  write(fd, &ev, sizeof(ev));
+}
+
+void send_key(int fd, uint16_t code, int32_t value) {
+  send_input_event(fd, EV_KEY, code, value);
+  send_input_event(fd, EV_SYN, SYN_REPORT, 0);
+}
+
 void *keys(void *arg) {
   struct input_event ev;
   int fd = *(int *)arg;
@@ -80,15 +96,12 @@ void *keys(void *arg) {
               for (int i = 0; i < (sizeof(bind.buttons) / sizeof(struct bind));
                    i++) {
                 struct bind *b = &bind.buttons[i];
-                struct input_event ev;
-                memset(&ev, 0, sizeof(ev));
-                ev.code = b->code;
-                ev.type = b->type;
-                ev.value = 1;
-                write(get_device_by_id(b->dev_id)->fd, &ev, sizeof(ev));
-                if (bind.click != Long) {
-                  ev.value = 0;
-                  write(get_device_by_id(b->dev_id)->fd, &ev, sizeof(ev));
+                int fd = get_device_by_id(b->dev_id)->fd;
+
+                send_key(fd, b->code, (b->hold == Unhold) ? 0 : 1);
+
+                if (bind.click != Long && b->hold != Hold) {
+                  send_key(fd, b->code, 0);
                 }
               }
             } else if (bind.action == Help) {
@@ -112,12 +125,9 @@ void *keys(void *arg) {
               for (int i = 0; i < (sizeof(bind.buttons) / sizeof(struct bind));
                    i++) {
                 struct bind *b = &bind.buttons[i];
-                struct input_event ev1;
-                memset(&ev1, 0, sizeof(ev1));
-                ev1.code = b->code;
-                ev1.type = b->type;
-                ev1.value = ev.value;
-                write(get_device_by_id(b->dev_id)->fd, &ev1, sizeof(ev1));
+
+                int fd = get_device_by_id(b->dev_id)->fd;
+                send_key(fd, b->code, ev.value);
               }
             }
             if (bind.action == Help && ev.value != 2) {

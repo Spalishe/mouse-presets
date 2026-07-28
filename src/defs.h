@@ -18,11 +18,18 @@ enum ClickType {
   Long = 1,
 };
 
+enum HoldType {
+  Click = 0,
+  Hold = 1,
+  Unhold = 2,
+};
+
 struct bind {
   bool valid;
   uint8_t dev_id;
   uint16_t code;
   uint16_t type;
+  enum HoldType hold;
 };
 
 struct key_bind {
@@ -30,7 +37,7 @@ struct key_bind {
   char *desc;
   enum Action action;
   enum ClickType click;
-  struct bind buttons[8];
+  struct bind buttons[16];
 };
 struct profile {
   uint8_t size;
